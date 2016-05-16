@@ -7,13 +7,13 @@ permalink: /:title
 encoding: UTF-8
 gems: [jekyll-paginate]
 
-title: bin
+title: bin - 随笔
 url: http://0bin.github.io
 feed: /atom.xml
-author_info: <a href="http://litaotao.github.io/">bin</a>
+author_info: <a href="http://litaotao.github.io/"> bin - 随 笔 </a>
 
 myblog:
-  gavatar: images/2.jpg
+  gavatar: images/bin2.jpg
   gpname: bin
   linkedin: http://www.linkedin.com/in/taotaoli
   github: https://github.com/0bin
