@@ -1,208 +1,307 @@
-# github-blog-template
+#Hux Blog
 
-***别忘了加星哦～～～***
+###[View Live Hux Blog &rarr;](http://huxpro.github.io)
 
-## 写在前面
+![](http://huangxuan.me/img/blog-desktop.jpg)
 
-使用 github 也快有3年了，的确觉得 github 的方便，易用，而且不仅仅在版本控制方面［版本控制方面个人感觉比 svn 好用了太多太多］，而且还提供了一个平台，让你随时跟进最近技术和趋势。今天就来说说其中一个比较实用  
 
-## 1. 最简单的步骤
+### "Page Build Warning" email
 
-- step 1 : 新建一个 repo，并克隆 repo 到本地
+These days, some of you must receive a "Page Build Warning" email from github after you commit happily. **Don't Worried!** It just that github changes its build environment.
 
->>
-repo 名定为 你的github用户名 + .github.io，比如说，我的 github 用户名叫 `litaotao`, 那新建的 repo 名就叫 `litaotao.github.io`
+In this mail, github told us:
 
-- step 2 : 克隆[模版](https://github.com/litaotao/github-blog-template)
+> You are attempting to use the 'pygments' highlighter, which is currently unsupported on GitHub Pages. Your site will use 'rouge' for highlighting instead. To suppress this warning, change the 'highlighter' value to 'rouge' in your '_config.yml'.
 
-![github-pages-blog-1.png](http://litaotao.github.io/images/github-pages-blog-1.png)
+So, just edit `_config.yml`, find `highlighter: pygments`, change it to `highlighter: rouge` and the warning will be gone.
 
-使用 git 命令克隆模版：*git clone git@github.com:litaotao/github-blog-template.git*
+
+## Boilerplate (beta)
+
+Want to clone a boilerplate instead of my buzz blog? Here comes this!  
+
+```
+$ git clone git@github.com:Huxpro/huxblog-boilerplate.git
+```
+
+**[View Boilerplate Here &rarr;](http://huangxuan.me/huxblog-boilerplate/)**
+
+
+## Translation
+
+ - ![cn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/China.png) **Chinese (Simplified)**: 感谢 [@BrucZhaoR](https://github.com/BruceZhaoR) 的 [中文翻译 &rarr;](https://github.com/Huxpro/huxpro.github.io/blob/master/README.zh.md)
+
+## Features
+
+##### New Feature (V1.5.2)
+
+- Annoyed to delete my blog post after clone or pull? **Boilerplate** comes to help you get started quickly and easily merge update.
+- `-apple-system` is added in font rule, which display beautiful new font **San Francisco** in iOS 9 by default.
+- Fixed [issue#15](https://github.com/Huxpro/huxpro.github.io/issues/15) about code wrap.
+
+##### New Feature (V1.5.1)
+
+- **[Comment](#comment)** support [**Disqus**](http://disqus.com) officially, thanks to @rpsh.
+
+##### New Feature (V1.5)
+
+- **[Comment](#comment)** and **[Analytics](#analytics)** is configurable now! We also add **Google Analytics support** and drop tencents. Both documents is updated.
+
+##### New Feature (V1.4)
+
+- **[Featured Tags](#featured-tags)** is now independent of [SideBar](#sidebar). Both documents is updated.
+- New **[SEO Title](#seo-title)** for SEO usage which is differ from the site title
+
+##### New Feature (V1.3.1)
+
+- Support **PingFang (苹方)**, the new Chinese font presented by [OS X El Capitan](http://www.apple.com/cn/osx/whats-new/)
+
+
+##### New Feature (V1.3)
+
+- Big Improvement to the **Navigation Menu** *(especially in Android)*:  Dropping the old, stuttering, low-performance [Bootstrap collapse.js](http://getbootstrap.com/javascript/#collapse),  replaced with an own wrote, [jank free](http://jankfree.org/) navbar menu in a pretty high-performance implementation of [Google Material Design](https://www.google.com/design/spec/material-design/introduction.html).
+
+<img src="http://huangxuan.me/img/blog-md-navbar.gif" width="320" />
+
+
+##### New Feature (V1.2)
+
+- Brand new **[Keynote Layout](#keynote-layout)** is provided for easily posting beautiful HTML presentations you have created with this blog
+
+
+##### New Feature (V1.1)
+
+- We now support a clean and gorgeous **[SideBar](#sidebar)** for displaying more info
+- **[Friends](#friends)** is also added as a common feature of blog help you do SEO
+
+##### V1.0
+
+- Full-feature **Tag** support
+- **Mobile first** user experience optimization
+- **Typographic optimization** for Chinese Fonts
+- **Network optimizaition** for China, dropping Google webfont, using local CDN
+- Using [Github Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/)
+- Using Baidu, Tencent/QQ analytics
+- Using [DuoShuo](http://duoshuo.com/) as the Disqus-like third party discussion system
+
+
+## Support
+
+- **Feel free to fork. I'll Appreciate it if you keep the Author & Github link at footer**
+- Give it a **Star** if you like, fork or just clone to use ;)
+- If any problem or requirement, just open an issue here and I will help you.
+
+
+## Document
+
+* Get Started
+	* [Environment](#environment)
+	* [Get Started](#get-started)
+	* [Write Posts](#write-posts)
+* Components
+	* [SideBar](#sidebar)
+	* [Mini About Me](#mini-about-me)
+	* [Featured Tags](#featured-tags)
+	* [Friends](#friends)
+	* [Keynote Layout](#keynote-layout)
+* Comment & Analysis
+	* [Comment](#comment)
+	* [Analytics](#analytics)
+* Advanced
+	* [Customization](#customization)
+	* [Header Image](#header-image)
+	* [SEO Title](#seo-title)
+
+#### Environment
+
+If you have jekyll installed, simply run `jekyll serve` in Command Line
+and preview the themes in your browser. You can use `jekyll serve --watch` to watch for changes in the source files as well.
+
+
+#### Get Started
+
+You can easily get started by modifying `_config.yml`:
+
+```
+# Site settings
+title: Hux Blog             # title of your website
+SEOTitle: Hux Blog			# check out docs for more detail
+description: "Cool Blog"    # ...
+
+# SNS settings      
+github_username: huxpro     # modify this account to yours
+weibo_username: huxpro      # the footer woule be auto-updated.
+
+# Build settings
+# paginate: 10              # nums of posts in one page
+```
+
+There are more options you can check out in the [Jekyll - Official Site](http://jekyllrb.com/), or you can directly dive into code to find more.
+
+
+#### Write Posts
+
+Feel free to checkout Markdown files in the `_posts/`, you will quickly realized how to post your articles with magical markdown plus this nice theme.
+
+The **front-matter** of a post looks like that:
+
+```
+---
+layout:     post
+title:      "Hello 2015"
+subtitle:   "Hello World, Hello Blog"
+date:       2015-01-29 12:00:00
+author:     "Hux"
+header-img: "img/post-bg-2015.jpg"
+tags:
+    - Life
+---
 
 ```
 
-taotao@mac007:~/Desktop/tmp$git clone git@github.com:litaotao/github-blog-template.git
-Cloning into 'github-blog-template'...
-remote: Counting objects: 75, done.
-remote: Compressing objects: 100% (68/68), done.
-remote: Total 75 (delta 4), reused 72 (delta 4), pack-reused 0
-Receiving objects: 100% (75/75), 1.19 MiB | 425.00 KiB/s, done.
-Resolving deltas: 100% (4/4), done.
-Checking connectivity... done.
+#### SideBar
+
+![](http://huangxuan.me/img/blog-sidebar.jpg)
+
+Seeing more information may be necessary for you to display, from V1.1, a clean, gorgeous **SideBar** is added for you, which provide more area for displaying possible modules. You can enable *(it is default enable)* this feature by simply config:
 
 ```
-
-- step 3 : 复制模版相关文件到你的本地repo中
-
-首先，先删掉模版里的一个文件夹 `.git`
-
+# Sidebar settings
+sidebar: true
+sidebar-about-description: "your description here"
+sidebar-avatar: /img/avatar-hux.jpg     # use absolute URL.
 ```
 
-taotao@mac007:~/Desktop/tmp/github-blog-template$ll
-...
-...
-...
-drwxr-xr-x  13 taotao  staff   442B May 10 10:32 .git
-taotao@mac007:~/Desktop/tmp/github-blog-template$sudo rm -rf .git
+We default support *[Featured Tags](#featured-tags)*, *[Mini About Me](#mini-about-me)* and *[Friends](#friends)* these three modules and you can add your own. The sidebar is naturally responsive and would be push to bottom in a small screen size (`<= 992px`, according to [Bootstarp Grid System](http://getbootstrap.com/css/#grid))  
+More details of these three separate modules are talking below.
 
-```
+#### Mini About Me
 
-然后，复制模版下所有文件到你的本地repo中，使用命令 *cp -r github-blog-template/* your_local_repo/* 
+Mini-About-Me module display all your SNS buttons also your avatar and the description if you set `sidebar-avatar` and `sidebar-about-description` which is very useful and common for a sidebar so it is default with your sidebar.
 
+It is really nice-looking and well-designed. It would be hidden in a small screen seeing the sidebar would be push to bottom and there is already a footer including SNS feature which is similar.
 
-```
-taotao@mac007:~/Desktop/tmp$cp -r github-blog-template/* your_local_repo/
-```
+#### Featured Tags
 
-- step 4 : 本地运行
-
-进入到 your_local_repo 目录，使用 `jekyll server --watch` 命令启动本地博客。
-
-```
-
-taotao@mac007:~/Desktop/tmp/your_local_repo$jekyll server --watch
-Configuration file: /Users/chenshan/Desktop/tmp/your_local_repo/_config.yml
-            Source: /Users/chenshan/Desktop/tmp/your_local_repo
-       Destination: /Users/chenshan/Desktop/tmp/your_local_repo/_site
- Incremental build: disabled. Enable with --incremental
-      Generating...
-                    done in 0.588 seconds.
- Auto-regeneration: enabled for '/Users/chenshan/Desktop/tmp/your_local_repo'
-Configuration file: /Users/chenshan/Desktop/tmp/your_local_repo/_config.yml
-    Server address: http://127.0.0.1:4000/
-  Server running... press ctrl-c to stop.
-
-```
-
-如果一切顺利，在浏览器访问：localhost:4000 即可看到你的博客了，我已经在模版里放了两篇文章，截图如下。
-
-![github-pages-blog-2.png](http://litaotao.github.io/images/github-pages-blog-2.png) 
-
-
-## 2. 自定义配置
-
-如果你已经成功完成了第一步，那恭喜，你马上就能拥有一个自己的博客了，在此之前，你只需要改一个配置文件即可：github-blog-template/_config.yml，你需要改的地方我用中文标注出来了，可以参考注释说明和我的博客来配置：[https://github.com/litaotao/litaotao.github.io](https://github.com/litaotao/litaotao.github.io)
+Considering the Featured-Tags feature in [Medium](http://medium.com) is pretty cool, so I add it in my blog theme also.   
+This module is independent of sidebar from V1.4, so it can definitely live without enable sidebar, which would be displayed in the bottom when `sidebar` set to false, and it is not only displayed in home page but also every post page bottom.
 
 
 ```
-    markdown: kramdown
-    highlighter: rouge
-    paginate: 8
-    permalink: /:title
-    encoding: UTF-8
-    gems: [jekyll-paginate]
-    
-    title: 你的博客名称
-    url: 你的博客地址，就叫 http://github用户名+.github.io
-    feed: /atom.xml
-    author_info: <a href="http://litaotao.github.io/">你的名字</a>
-    
-    myblog:
-      gavatar: 你的头像地址
-      gpname: 你的名字
-      linkedin: 你的 linkedin 地址
-      github: 你的 github 地址
-      email: mailto:你的 email 地址
-      coverimgs: []
-      postbgimg: []
-    
-    categories: [你的博客目录名称，对应到 your_local_repo/_posts/ 下的文件夹名]
+# Featured Tags
+featured-tags: true  
+featured-condition-size: 1     # A tag will be featured if the size of it is more than this condition value
 ```
 
-ok,如果你已经更改好配置文件了，并且本地运行正常的话，可以上传到 github 了。
+The only one thing need to be paid attention to is the `featured-condition-size`: A tag will be featured if the size of it is more than this condition value.  
+Internally, a condition template `{% if tag[1].size > {{site.featured-condition-size}} %}` is used to do the filter.
 
-## 3. 深度阅读之目录文件说明
+#### Friends
+
+Friends is a very common feature of a blog seeing the SEO, so I add it in V1.1 release to help that.   
+Friends can also live without enable sidebar, also be displayed in the bottom when sidebar unable, and be displayed in every post page bottom.
+
+
+You can just add your friends information in `_config.yml` with a familiar JSON syntax and everything is done, very easy:
 
 ```
-
-    taotao@mac007:~/Desktop/github/github-blog-template$tree
-    ### 404 页面，你可以自定义
-    ├── 404.html
-    ├── README.md
-    ### 博客配置文件，基本上是最重要的一个文件之一了
-    ├── _config.yml
-    ### 博客页面模版目录
-    ├── _layouts
-    │   ├── default.html
-    │   ├── home.html
-    │   ├── page.html
-    │   └── post.html
-    ### 博客文章目录，下面可以按文件夹进行博文分类
-    ### 注意，博文文件格式必须是：时间-博文标题.md，参考下面的格式
-    ├── _posts
-    │   ├── books
-    │   │   └── 2016-04-29-books-recommend-and-summarize-on-apr-2016.md
-    │   └── python
-    │       └── 2016-04-01-spark-in-finance-and-investing.md
-    ### 这个是你的站点地图了，用户可以访问这个文件夹下面的所有文件
-    ### 比如说，用户可以直接访问我的 litaotao.github.io/404.html; litaotao.github.io/images/2.jpg
-    ### 比如说，当你访问 litaotao.github.io/spark-in-finance-and-investing  
-    ###        实际上是访问了 litaotao.github.io/spark-in-finance-and-investing.html
-    ### 你会发现这下面有很多在博客更目录下重复的文件夹，比如说 css，js，images等文件夹，不要纳闷，这是正常的
-    ### 因为你的博客更目录下的文件，是 jekyll 用来渲染一个 html 文件的，html 文件及其所需要的任何文件，都会放到 _site 这个
-    ### 专用的目录下面
-    ├── _site
-    │   ├── 404.html
-    │   ├── README.md
-    │   ├── atom.xml
-    │   ├── books-recommend-and-summarize-on-apr-2016.html
-    │   ├── css
-    │   │   ...
-    │   │   ...
-    │   │   ...
-    │   ├── images
-    │   │   ├── 2.jpg
-    │   │   ├── spark-in-finance-1.jpg
-    │   │   ├── spark-in-finance-2.jpg
-    │   │   └── spark-in-finance-3.jpg
-    │   ├── index.html
-    │   ├── js
-    │   │   ...
-    │   │   ...
-    │   │   ...
-    │   └── spark-in-finance-and-investing.html
-    ├── atom.xml
-    ├── css
-    │   │   ...
-    │   │   ...
-    │   │   ...
-    ├── images
-    │   │   ...
-    │   │   ...
-    │   │   ...
-    ├── index.html
-    └── js
-        │   │   ...
-        │   ...
-        │   ...
+# Friends
+friends: [
+    {
+        title: "Foo Blog",
+        href: "http://foo.github.io/"
+    },
+    {
+        title: "Bar Blog",
+        href: "http://bar.github.io"
+    }
+]
 ```
 
 
-## 4. 总结
+#### Keynote Layout
 
-总的来说，利用 github 搭建博客的步骤为：
+![](http://huangxuan.me/img/blog-keynote.jpg)
 
-- 创建一个 github用户名 + '.github.io' 的新 repo，并克隆到本地
-- 把模版，除去 '.git' 的所有文件 copy 到你的repo 中
-- 更改 '_config.yml' 配置文件
-- 本地试运行，上传到github
+There is a increasing tendency to use Open Web technology to create keynotes, presentations, like Reveal.js, Impress.js, Slides, Prezi etc. I consider a modern blog should have abilities to post these HTML based presentation easily also abilities to play it directly.
 
-## 5. 其他话题
+Under the hood, a `iframe` is used to include webpage from outer source, so the only things left is to give a url in the **front-matter**:
 
-一个简单，但基本够用的博客就这样搭建完成了。其他还有一些扩展话题，感兴趣的同学可以 google 或者联系我，比如说：
+```
+---
+layout:     keynote
+iframe:     "http://huangxuan.me/js-module-7day/"
+---
+```
 
-- 如何给你的博客加上 评论功能
+The iframe will be automatically resized to adapt different form factors also the device orientation. A padding is left to imply user that there has more content below, also to ensure that there is a area for user to scroll down in mobile device seeing most of the keynote framework prevent the browser default scroll behavior.
 
-![github-pages-blog-3.png](http://litaotao.github.io/images/github-pages-blog-3.png)
 
-- 如何给你的博客加上 cnzz 统计功能
+#### Comment
 
-![github-pages-blog-4.png](http://litaotao.github.io/images/github-pages-blog-4.png)
+This theme support both [Disqus](http://disqus.com) and [Duoshuo](http://duoshuo.com) as the third party discussion system.
 
-- 如何给你的博客加上 growingio 统计功能
+First, you need to sign up and get your own account. **Repeat, DO NOT use mine!** (I have set Trusted Domains) It is deathly simple to sign up and you will get the full power of management system. Please give it a try!
 
-![github-pages-blog-5.png](http://litaotao.github.io/images/github-pages-blog-5.png)
+Second, from V1.5, you can easily complete your comment configuration by just adding your **short name** into `_config.yml`:
 
-- 如何给你的博客加上 百度分享功能
+```
+duoshuo_username: _your_duoshuo_short_name_
+# OR
+disqus_username: _your_disqus_short_name_
+```
 
-![github-pages-blog-6.png](http://litaotao.github.io/images/github-pages-blog-6.png)
+**To the old version user**, it's better that you pull the new version, otherwise you have to replace code in `post.html`, `keynote.html` and `about.html` by yourselves.
+
+Furthermore, Duoshuo support Sharing. if you only wanna use Duoshuo comment without sharing, you can set `duoshuo_share: false`. You can use Duoshuo Sharing and Disqus Comments together also.
+
+
+
+#### Analytics
+
+From V1.5, we support Google Analytics and Baidu Tongji officially with a deathly simple config:
+
+```
+# Baidu Analytics
+ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
+
+# Google Analytics
+ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
+ga_domain: huangxuan.me
+```
+
+Just checkout the code offered by Google/Baidu, and copy paste here, all the rest is already done for you.
+
+
+
+#### Customization
+
+If you wanna do more customization and change code yourself, a [Grunt](gruntjs.com) environment is also included. (Thanks to Clean Blog.)
+
+There are a number of tasks it performs like minification of the JavaScript, compiling of the LESS files, adding banners to keep the Apache 2.0 license intact, and watching for changes. Run the grunt default task by entering `grunt ` into your command line which will build the files. You can use `grunt watch` if you are working on the JavaScript or the LESS.
+
+**Try to understand code in `_include/` and `_layouts/`, then you can modify Jekyll [Liquid](https://github.com/Shopify/liquid/wiki) template directly to do more creative customization.**
+
+
+#### Header Image
+
+Change header images of any pages or any posts is pretty easy as mentioned above. But, thanks to [issue #6 (in Chinese)](https://github.com/Huxpro/huxpro.github.io/issues/6) asked, **how to make it looks great?**
+
+**Well...it is actually a design issue**, not a coding stuff. It is better that you have basic design knowledge, but not is ok, let me told you how to make it well-designed:
+
+Seeing the title text above image is **white**, the image should be **dark** to emphasize the contract. so we can easily add a **black overlay with fews of opacity**, which is depends on the brightness of the original images you used. you can process it in Photoshop, Sketch etc.
+
+In technical views, it can be done with CSS. However, the opacity of the black overlay is really hard to assigned, **every image has different brightness so the  degree it should be adjusted is different so it is impossible to hard code it.**
+
+
+#### SEO Title
+
+Before V1.4, site setting `title` is not only used for displayed in Home Page and Navbar, but also used to generate the `<title>` in HTML.
+It's possible that you want the two things different. For me, my site-title is **“Hux Blog”** but I want the title shows in search engine is **“黄玄的博客 | Hux Blog”** which is multi-language.
+
+So, the SEO Title is introduced to solve this problem, you can set `SEOTitle` different from `title`, and it would be only used to generate HTML `<title>` and setting DuoShuo Sharing.
+
+## Thanks
+
+This theme is forked from [IronSummitMedia/startbootstrap-clean-blog-jekyll](https://github.com/IronSummitMedia/startbootstrap-clean-blog-jekyll)  
+Thanks Jekyll and Github Pages!
