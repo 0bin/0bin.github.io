@@ -1,20 +1,18 @@
 ---
 layout:     post
-title:      "iOS"
-subtitle:   "一些大牛博客"
-date:       2015-09-20
+title:      "随笔"
+subtitle:   "为什么写博客"
+date:       2015-09-22
 author:     "Bin"
 header-img: "img/home-bg-o.jpg"
 tags:
-    - iOS
+    - 随笔
     
 ---
 
-http://blog.ibireme.com    YY
+- 个人笔记较为混乱，时间一久自己看的都辛苦。
 
-http://blog.devtang.com    唐巧
+- 督促自己更好的学习
 
-https://onevcat.com        王巍
-
-http://blog.sunnyxx.com    sunny
+- 个性 
 
