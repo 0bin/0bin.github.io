@@ -2,7 +2,7 @@
 layout:     post
 title:      "随笔"
 subtitle:   "为什么写博客"
-date:       2015-09-22
+date:       2015-09-20
 author:     "Bin"
 header-img: "img/home-bg-o.jpg"
 tags:
@@ -14,5 +14,5 @@ tags:
 
 - 督促自己更好的学习
 
-- 个性 
+
 
